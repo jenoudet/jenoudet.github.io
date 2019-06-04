@@ -1,0 +1,5 @@
+env
+*.egg*
+*.json
+setup.py
+node_modules
