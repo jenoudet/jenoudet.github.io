@@ -974,9 +974,9 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(
-    'p',
+    'h1',
     null,
-    'Testing'
+    'Test'
 ), document.getElementById("reactEntry"));
 
 /***/ }),

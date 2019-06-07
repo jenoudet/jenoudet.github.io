@@ -1,5 +1,5 @@
 env
 *.egg*
-*.json
-setup.py
-node_modules
+node_modules/
+.vscode/
+*pycache*
