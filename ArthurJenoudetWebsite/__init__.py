@@ -9,3 +9,4 @@ app.config.from_object('ArthurJenoudetWebsite.config')
 app.config.from_envvar('ARTHURJENOUDETWEBSITE_SETTINGS', silent=True)
 
 import ArthurJenoudetWebsite.views
+import ArthurJenoudetWebsite.api

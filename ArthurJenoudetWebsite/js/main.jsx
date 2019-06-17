@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HomePage from './homepage';
 
 ReactDOM.render(
-    <h1>Test</h1>,
+    <HomePage />,
     document.getElementById("reactEntry")
 );

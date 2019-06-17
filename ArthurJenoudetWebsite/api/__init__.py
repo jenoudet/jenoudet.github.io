@@ -1,3 +1,3 @@
 """Website REST API."""
 
-from ArthurJenoudetWebsite.api import *
+from ArthurJenoudetWebsite.api.links import menulinks
