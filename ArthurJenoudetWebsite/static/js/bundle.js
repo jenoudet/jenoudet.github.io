@@ -9232,20 +9232,12 @@ var HomePage = function (_React$Component) {
         _classCallCheck(this, HomePage);
 
         return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
-        // this.state = { elts : "" };
     }
 
     _createClass(HomePage, [{
         key: 'render',
         value: function render() {
-            return (
-                // <MenuBar />
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    'test'
-                )
-            );
+            return _react2.default.createElement(_menubar2.default, { url: '/menulinks/' });
         }
     }]);
 
@@ -9271,6 +9263,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(29);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9278,8 +9274,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import PropTypes from 'prop-types';
 
 var MenuBar = function (_React$Component) {
     _inherits(MenuBar, _React$Component);
@@ -9289,47 +9283,56 @@ var MenuBar = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (MenuBar.__proto__ || Object.getPrototypeOf(MenuBar)).call(this, props));
 
-        _this.state = {};
+        _this.state = { links: [] };
         return _this;
     }
 
-    // componentDidMount() {
-    //     fetch(this.props.url, {credentials : "same-origin"})
-    //     .then((response) => {
-    //         if (!response.ok) throw Error(response.statusText);
-    //         return response.json();
-    //     })
-    //     .then((data) => {
-    //         this.state = data;
-    //     })
-    //     .catch(error => console.log(error));
-    // }
-
-    // loopMenus() {
-
-    // }
-
     _createClass(MenuBar, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch(this.props.url, { credentials: "same-origin" }).then(function (response) {
+                if (!response.ok) throw Error(response.statusText);
+                return response.json();
+            }).then(function (data) {
+                _this2.setState({
+                    links: data["links"]
+                });
+            }).catch(function (error) {
+                return console.log(error);
+            });
+        }
+    }, {
+        key: 'loopMenus',
+        value: function loopMenus() {
+            var menu_items = [];
+            var num = 0;
+            this.state["links"].forEach(function (dict) {
+                if (num === 0) {
+                    menu_items.push(_react2.default.createElement(
+                        'a',
+                        { key: num, href: dict['url'], className: 'active item' },
+                        dict['name']
+                    ));
+                } else {
+                    menu_items.push(_react2.default.createElement(
+                        'a',
+                        { key: num, href: dict['url'], className: 'item' },
+                        dict['name']
+                    ));
+                }
+                num += 1;
+            });
+            return menu_items;
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "ui inverted menu" },
-                _react2.default.createElement(
-                    "a",
-                    { href: "/", className: "active item" },
-                    "Arthur Jenoudet"
-                ),
-                _react2.default.createElement(
-                    "a",
-                    { href: "/#link1", className: "item" },
-                    "link 1"
-                ),
-                _react2.default.createElement(
-                    "a",
-                    { href: "/#link2", className: "item" },
-                    "link 2"
-                )
+                'div',
+                { className: 'ui inverted menu' },
+                this.loopMenus()
             );
         }
     }]);
@@ -9337,12 +9340,12 @@ var MenuBar = function (_React$Component) {
     return MenuBar;
 }(_react2.default.Component);
 
-// MenuBar.propTypes = {
-//     url: PropTypes.string.isRequired,
-// };
-
-
 exports.default = MenuBar;
+
+
+MenuBar.propTypes = {
+    url: _propTypes2.default.string.isRequired
+};
 
 /***/ })
 /******/ ]);

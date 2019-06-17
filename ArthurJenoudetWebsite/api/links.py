@@ -6,21 +6,23 @@ Acts as a database for the website.
 import flask
 import ArthurJenoudetWebsite
 
-@ArthurJenoudetWebsite.app.route("/menulinks", methods=['GET'])
+@ArthurJenoudetWebsite.app.route("/menulinks/", methods=['GET'])
 def menulinks():
-    return ({
-        [
+    context = ({
+        "links" : [
             {
                 "name": "Arthur Jenoudet",
                 "url": "/"
             },
             {
-                "name": "link1",
+                "name": "link01",
                 "url": "/#link1"
             },
             {
-                "name": "link2",
+                "name": "link02",
                 "url": "/#link2"
             }
         ]
     })
+
+    return flask.jsonify(**context)

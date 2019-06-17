@@ -6,13 +6,11 @@ export default class HomePage extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = { elts : "" };
     }
 
     render() {
         return (
-            // <MenuBar />
-            <div>test</div>
+            <MenuBar url="/menulinks/" />
         );
     }
 }

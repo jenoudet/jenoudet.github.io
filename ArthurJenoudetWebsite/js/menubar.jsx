@@ -1,39 +1,53 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class MenuBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {links : []};
     }
 
-    // componentDidMount() {
-    //     fetch(this.props.url, {credentials : "same-origin"})
-    //     .then((response) => {
-    //         if (!response.ok) throw Error(response.statusText);
-    //         return response.json();
-    //     })
-    //     .then((data) => {
-    //         this.state = data;
-    //     })
-    //     .catch(error => console.log(error));
-    // }
+    componentDidMount() {
+        fetch(this.props.url, {credentials : "same-origin"})
+        .then((response) => {
+            if (!response.ok) throw Error(response.statusText);
+            return response.json();
+        })
+        .then((data) => {
+            this.setState({
+                links : data["links"],
+            }); 
+        })
+        .catch(error => console.log(error));
+    }
     
-    // loopMenus() {
-        
-    // }
+    loopMenus() {
+        let menu_items = [];
+        let num = 0;
+        this.state["links"].forEach((dict) => {
+            if (num === 0) {
+                menu_items.push(
+                    <a key={num} href={dict['url']} className="active item">{dict['name']}</a>
+                );
+            } else {
+                menu_items.push(
+                    <a key={num} href={dict['url']} className="item">{dict['name']}</a>
+                );
+            }
+            num += 1;
+        });    
+        return menu_items;    
+    }
 
     render() {
         return (
             <div className="ui inverted menu">
-                <a href="/" className="active item">Arthur Jenoudet</a>
-                <a href="/#link1" className="item">link 1</a>
-                <a href="/#link2" className="item">link 2</a>
+                {this.loopMenus()}
             </div>
         );
     }
 }
 
-// MenuBar.propTypes = {
-//     url: PropTypes.string.isRequired,
-// };
+MenuBar.propTypes = {
+    url: PropTypes.string.isRequired,
+};
