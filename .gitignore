@@ -1,5 +1,0 @@
-env
-*.egg*
-node_modules/
-.vscode/
-*pycache*
