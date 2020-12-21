@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## Projects 
 
-You can use the [editor on GitHub](https://github.com/jenoudet/jenoudet.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+### LLVML - A Machine Learning framework for LLVM loop unrolling
+Designed and implemented a Machine Learning to predict the optimal unroll factor of a loop in LLVM. Focused on the Feature Extraction step of the pipeline. Our Neural Network predicted the top two unroll factors in over 95% of cases. The paper can be found [here](https://drive.google.com/file/d/1jvSS3FYq7l4NvZA9LoVWhc9icNXR7bOR/view?usp=sharing).
+![Pipeline](images/pipeline.jpg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Various Natural Language Processing tasks 
+description 
+[Link to the paper](https://drive.google.com/file/d/1bV3wNY6OgIMXWMPDYI6-TytcHOhjUtXD/view?usp=sharing)
 
-### Markdown
+### InstaClone
+ Implemented an Instagram clone based on a Python Flask backend controller using a REST API. Backend communicated with a MySQL database. Built the frontend in ReactJS and published the project on AWS.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jenoudet/jenoudet.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ ### MapReduce Server 
+ Implemented a MapReduce server capable of processing an arbitrary number of files in Python. Used one master controller and an arbitrary number of workers communicating through a REST API using Python socket and thread libraries extensively.
