@@ -8,9 +8,7 @@
 
     {% seo %}
     <link rel="stylesheet" href="{{ "assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+    <title>{{ site.title }}</title>
 </head>
 
 <body>
@@ -19,21 +17,19 @@
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
 
             {% if site.logo %}
-            <img src="{{site.logo | relative_url}}" alt="Logo" />
+            <img src="{{site.logo | relative_url}}" alt="Logo" max-width="10px" max-height="auto" />
             {% endif %}
 
             <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-            <!-- <h4>this is a test -->
             Links
             <ul>
                 {% for link_hash in site.links %}
                 {% for link in link_hash %}
-                <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="{{ link[1] }}" >{{ link[0] }}</a></li>
                 {% endfor %}
                 {% endfor %}
             </ul>
-            <!-- </h4> -->
 
         </header>
         <section>
