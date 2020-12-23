@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Projects 
 
 ### LLVML - A Machine Learning framework for LLVM loop unrolling
