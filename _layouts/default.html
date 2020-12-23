@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    <title>{{ site.title | default: site.github.repository_name }}</title>
+    <!-- <title>{{ site.title | default: site.github.repository_name }}</title> -->
 </head>
 
 <body>
@@ -25,19 +25,26 @@
 
             <h4>{{ site.description | default: site.github.project_tagline }}</h4>
 
-            <!-- {% if site.github.is_project_page %}
+            <ul>
+                <li><a href="jenoudet@umich.edu">jenoudet@umich.edu</a></li>
+                <li><a href="https://drive.google.com/file/d/1IWXVPaf2o45myx32e-jmf7DgQpE3W0IK/view?usp=sharing">Resume</a></li>
+                <li><a href="https://www.linkedin.com/in/arthur-j/">LinkedIn</a></li>
+                <li><a href="https://github.com/jenoudet">Github</a></li>
+            </ul>
+
+            {% if site.github.is_project_page %}
             <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{
                         site.github.repository_nwo }}</small></a></p>
-            {% endif %} -->
+            {% endif %}
 
-            <p>
+            <!-- <p>
                 Links:
                 <ul>
                     {% for link in site.links %}
                     <li><a href="{{ site.links[link] }}">{{ link }}</a></li>
                     {% endfor %}
                 </ul>
-            </p>
+            </p> -->
             
             <!-- {% if site.github.is_user_page %}
             <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
@@ -56,13 +63,13 @@
             {{ content }}
 
         </section>
-        <!-- <footer>
+        <footer>
             {% if site.github.is_project_page %}
             <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
             {% endif %}
             <p><small>Hosted on GitHub Pages &mdash; Theme by <a
                         href="https://github.com/orderedlist">orderedlist</a></small></p>
-        </footer> -->
+        </footer>
     </div>
     <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}

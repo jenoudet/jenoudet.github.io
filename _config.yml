@@ -2,8 +2,8 @@ theme: jekyll-theme-minimal
 title: Arthur Jenoudet
 logo: images/headshot.jpg
 description: I am a Computer Science & Engineering graduate student at the University of Michigan. On campus, I am a captain of the Michigan Alpine Ski and Snowboard Team and participated in the 2019 USCSA National Championship in Jackson, WY. Having grown up in France I am fluent in French and English. I wish to pursue a career at the intersection of tech and business, while leveraging my bilingualism.
-links:  
-  Email: jenoudet@umich.edu
-  Resume: https://drive.google.com/file/d/1IWXVPaf2o45myx32e-jmf7DgQpE3W0IK/view?usp=sharing
-  LinkedIn: https://www.linkedin.com/in/arthur-j/
-  Github: https://github.com/jenoudet
+# links:  
+#   Email: jenoudet@umich.edu
+#   Resume: https://drive.google.com/file/d/1IWXVPaf2o45myx32e-jmf7DgQpE3W0IK/view?usp=sharing
+#   LinkedIn: https://www.linkedin.com/in/arthur-j/
+#   Github: https://github.com/jenoudet
