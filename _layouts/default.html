@@ -17,8 +17,12 @@
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
 
             {% if site.logo %}
-            <img src="{{site.logo | relative_url}}" alt="Logo" max-width="10px" max-height="auto" />
+            <img src="{{site.logo | relative_url}}" alt="Logo" width="270" height="auto" />
             {% endif %}
+
+            {% for header in site.headers %}
+            <h4>{{ header }}</h4>
+            {% endfor %}
 
             <p>{{ site.description | default: site.github.project_tagline }}</p>
 

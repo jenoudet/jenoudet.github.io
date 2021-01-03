@@ -13,7 +13,7 @@ Implemented three different Machine Learning models to tackle the [CommonsenseQA
 We achieved an accuracy of 63%, 55%, and 62%, respectively. The paper can be found [here](https://drive.google.com/file/d/1bV3wNY6OgIMXWMPDYI6-TytcHOhjUtXD/view?usp=sharing){:target="_blank"}.
 
 ### My personal website
-Build this website based on the template found in [this](https://github.com/pages-themes/minimal){:target="_blank"} Github repository. The source code can be found [here](https://github.com/jenoudet/jenoudet.github.io){:target="_blank"}.
+Built this website based on the template found in [this](https://github.com/pages-themes/minimal){:target="_blank"} Github repository. The source code can be found [here](https://github.com/jenoudet/jenoudet.github.io){:target="_blank"}.
 
 ### InstaClone
 Implemented an Instagram clone based on a Python Flask backend controller using a REST API. Backend communicated with a MySQL database. Built the frontend in ReactJS and published the project on AWS.
